@@ -12,6 +12,9 @@ gem 'jquery-rails'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
+gem 'camaleon_cms', '>=2.3.3'
+gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
+
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
@@ -26,6 +29,8 @@ gem 'faker'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 group :production do
   gem 'rails_12factor'
 end
@@ -37,6 +42,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'listen'
   gem 'bullet'
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -54,5 +60,6 @@ group :test do
   gem 'fuubar'
 end
 
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+#################### Camaleon CMS include all gems for plugins and themes ####################
+require './lib/plugin_routes'
+instance_eval(PluginRoutes.draw_gems)
