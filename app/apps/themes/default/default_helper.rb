@@ -24,5 +24,4 @@ module Themes::Default::DefaultHelper
   def theme_default_on_install(theme)
     theme.add_field({"name"=>"Footer message", "slug"=>"footer"},{field_key: "editor", default_value: 'Copyright &copy; 2015 - Camaleon CMS. All rights reservated.'})
   end
-
 end
