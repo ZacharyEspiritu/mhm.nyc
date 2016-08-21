@@ -2,85 +2,39 @@
 @import "bootstrap";
 @import "default";
 @import "mixins";
+@import "bootstrap-text-align";
+@import "chameleon-default";
+
+$dark-blue: #122076;
+
+$white: #ffffff;
+
+$beige: #eae5ad;
+
+$lighter-gray: #F8F8F8;
+$light-gray: #7b7b7b;
+$gray: #2f2f2f;
+$dark-gray: #555555;
+$darker-gray: #171717;
+
+$colophon-height: 48px;
 
 body {
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
-  background-color: #ffffff;
-  color: #555;
+  background-color: $lighter-gray;
+  color: $dark-gray;
   font-family: 'Century', serif;
   font-size: 14px;
   font-weight: 400;
-  background: #F8F8F8;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: #333;
-  font-weight: 700;
-}
-
-h1 {
-  font-size: 35px;
-  margin-bottom: 30px;
-  margin-top: 30px;
-}
-
-p {
-  font-size: 16px;
-  line-height: 28px;
-  margin-bottom: 25px;
-}
-
-.author-avatar img {
-  -webkit-border-radius: 95px;
-  -moz-border-radius: 95px;
-  border-radius: 95px;
-}
-
-/* Links */
-a {
-  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-  color: #122076;
-  transition: color 0.1s ease-in, background 0.1s ease-in;
-  word-wrap: break-word;
-}
-
-a:hover,
-a:focus { color: #7b7b7b; outline: 0; text-decoration: none; }
-
-a:before,
-a:after {
-  -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
-  -o-transition: color 0.1s ease-in, background 0.1s ease-in;
-  -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
-  -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
-  transition: color 0.1s ease-in, background 0.1s ease-in;
-}
-
-hr {
-  border: 0;
-  border-top: 1px solid #ccc;
-  display: block;
-  height: 1px;
-  margin: 1em 0;
-  padding: 0;
 }
 
 .navbar {
+  height: 151px;
   padding-top: 11px;
   margin-bottom: 0px;
-  background-color: #122076;
-  border-color: #16a085;
-  height: 151px;
-  border-bottom: 2px solid #FFFFFF;
+  border-bottom: 2px solid $white;
+  background-color: $dark-blue;
   box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
 
   .navbar-block {
@@ -102,16 +56,17 @@ hr {
   .navbar-link__right { text-align: right; }
 
   a {
-    color: #EAE5AD;
+    color: $beige;
     font-size: 36px;
   }
 }
 
 #footer {
-  background-color: #2f2f2f;
+  background-color: $gray;
   padding-top: 18px;
-  height: 183px;
   box-shadow: 0px -2px 4px 0px rgba(0,0,0,0.50);
+  position: relative;
+  padding-bottom: $colophon-height + 16px;
 
   p { color: white; }
 
@@ -127,9 +82,7 @@ hr {
     box-shadow: none;
     height: inherit;
 
-    .navbar-block {
-      width: 970px;
-    }
+    .container { max-width: 975px; }
 
     .navbar-link__left,
     .navbar-link__center,
@@ -138,78 +91,41 @@ hr {
     }
 
     a {
-      color: #EAE5AD;
+      color: $beige;
       font-size: 20px;
     }
   }
 
   .colophon {
-    background: #171717;
-    box-shadow: 0px -1px 4px 0px rgba(0,0,0,0.50);
-    height: 48px;
     position: absolute;
     bottom: 0;
+    height: $colophon-height;
     width: 100%;
     font-size: 15px;
+    background: $darker-gray;
+    box-shadow: 0px -1px 4px 0px rgba(0,0,0,0.50);
 
     .colophon-content {
       @include vertical-align();
     }
 
-    .container { width: 920px; }
+    .container { max-width: 920px; }
+
+    a {
+      color: $light-gray;
+      -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+      -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+      -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+      -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+      transition: color 0.1s ease-in, background 0.1s ease-in;
+      word-wrap: break-word;
+    }
+
+    a:hover,
+    a:focus {
+      color: $beige;
+      outline: 0;
+      text-decoration: none;
+    }
   }
 }
-
-/* Helpers */
-.mt {
-  margin-bottom: 40px;
-  margin-top: 40px;
-}
-
-.pt {
-  padding-bottom: 50px;
-  padding-top: 50px;
-}
-
-/* Blog Date */
-bd {
-  color: #d2d2d2;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-
-/* Blog Author */
-ba { font-size: 12px; padding-left: 5px; text-transform: uppercase; }
-
-/* Blog Quote */
-.bq { font-size: 22px; padding-top: 30px; }
-
-/* Blog Tags */
-bt { font-size: 12px; }
-
-/* ================== PORTFOLIO IMAGES HOVER EFFECT ================== */
-/* Effects also are controled by hover.zoom.js */
-.zoom {
-  background: transparent image-url("themes/camaleon_first/assets/images/loader.gif") no-repeat center;
-  display: block;
-  overflow: hidden;
-  position: relative;
-}
-
-.zoomOverlay {
-  background-image: image-url("themes/camaleon_first/assets/images/zoom.png");
-  background-position: center;
-  background-repeat: no-repeat;
-  bottom: 0;
-  display: none;
-  left: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.zoom2 { opacity: 1; }
-
-.zoom2:hover { opacity: 0.5; }
-

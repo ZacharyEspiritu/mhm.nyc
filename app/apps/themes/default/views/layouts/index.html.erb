@@ -59,52 +59,9 @@
             </div>
         </div>
 
-        <footer id="footer" style="position: relative;">
-            <center>
-                <%= image_tag "footer_ruler.svg" %>
-                <nav role="navigation">
-                    <div class="navbar navbar-footer navbar-static-top">
-                        <div class="container">
-                            <div class="navbar-block">
-                                <div class="row">
-                                    <div class="col-md-2 text-center">
-                                        <%= link_to "home", "/" %>
-                                    </div>
-                                    <div class="col-md-2 text-center">
-                                        <%= link_to "about", "#" %>
-                                    </div>
-                                    <div class="col-md-2 text-center">
-                                        <%= link_to "learn", "#" %>
-                                    </div>
-                                    <div class="col-md-2 text-center">
-                                        <%= link_to "help", "#" %>
-                                    </div>
-                                    <div class="col-md-2 text-center">
-                                        <%= link_to "contact", "#" %>
-                                    </div>
-                                    <div class="col-md-2 text-center">
-                                        <%= link_to "admin", "#" %>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </nav>
-            </center>
-            <div class="colophon">
-                <div class="colophon-content">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-6">
-                                &copy; 2016 Mental Health Matters
-                            </div>
-                            <div class="col-md-6 text-right">
-                                Designed by Zachary Espiritu
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <footer id="footer">
+            <%= render partial: "/partials/footer_navbar" %>
+            <%= render partial: "/partials/footer_colophon" %>
             <!-- <div class="col-lg-4">
                 <div id="text-4" class="widget-wrapper widget_text">
                     <div style="">
