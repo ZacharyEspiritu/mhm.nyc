@@ -21,26 +21,26 @@ jQuery(function(){
                 overlayColor: '#3498db',
                 zoom: 0
             });
-            
+
             jQuery('.green').hoverZoom({
-                overlayColor: '#1abc9c',
+                overlayColor: '#122076',
                 zoom: 0
             });
-            
+
             jQuery('.pink').hoverZoom({
                 overlayColor: '#bd2e75',
                 zoom: 0
             });
-            
+
             jQuery('.black').hoverZoom({
                 overlayColor: '#2f2f2f',
                 zoom: 0
             });
-            
+
             jQuery('.alizarin').hoverZoom({
                 overlayColor: '#e74c3c',
                 zoom: 0
             });
-  
+
 
 });
