@@ -1,0 +1,22 @@
+<div class="col-sm-12">
+    <div class="post-card">
+        <div class="post-card__accent-lg"></div>
+        <div class="content large-content">
+            <div class="post-image-large" style="background-image: url('<%= raw post.get_meta("thumb") %>');">
+            </div>
+            <div class="post-text-large">
+                <div class="post-category">
+                    <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
+                </div>
+                <div class="post-title">
+                    <a href="<%= post.the_url %>">
+                        <%= post.the_title %>
+                    </a>
+                </div>
+                <div class="post-preview">
+                    This is a brief teaser of the post. It will automatically be populated with the first paragraph of the post when the post is created. If the paragraph is longer than is available, it will be truncated using an elipses here…
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

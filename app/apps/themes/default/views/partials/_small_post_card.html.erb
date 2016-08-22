@@ -1,0 +1,19 @@
+<div class="col-sm-6 top-card-padder">
+    <div class="post-card right-post-card">
+        <div class="post-card__accent-sm"></div>
+        <div class="content">
+            <% if post.has_thumb? %>
+                <div class="post-image" style="background-image: url('<%= raw post.get_meta("thumb") %>');">
+                </div>
+            <% end %>
+            <div class="post-category">
+                <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
+            </div>
+            <div class="post-title">
+                <a href="<%= post.the_url %>">
+                    <%= post.the_title %>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -23,69 +23,11 @@
     <div class="row post-previews">
         <div class="col-sm-8">
             <% posts.each_with_index do |post, index| %>
-                <div class="col-sm-12">
-                    <div class="post-card">
-                        <div class="post-card__accent-lg"></div>
-                        <div class="content large-content">
-                            <div class="post-image-large" style="background-image: url('<%= raw post.get_meta("thumb") %>');
-  background-color: white;
-  background-size: cover;
-  background-position: center center;">
-                            </div>
-                            <div class="post-text-large">
-                                <div class="post-category">
-                                    <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
-                                </div>
-                                <div class="post-title">
-                                    <%= post.the_title %>
-                                </div>
-                                <div class="post-preview">
-                                    This is a brief teaser of the post. It will automatically be populated with the first paragraph of the post when the post is created. If the paragraph is longer than is available, it will be truncated using an elipses here…
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 top-card-padder">
-                    <div class="post-card left-post-card">
-                        <div class="post-card__accent-sm"></div>
-                        <div class="content">
-                            <% if post.has_thumb? %>
-                                <div class="post-image" style="background-image: url('<%= raw post.get_meta("thumb") %>');
-  background-color: white;
-  background-size: cover;
-  background-position: center center;">
-                                </div>
-                            <% end %>
-                            <div class="post-category">
-                                <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
-                            </div>
-                            <div class="post-title">
-                                <%= post.the_title %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 top-card-padder">
-                    <div class="post-card right-post-card">
-                        <div class="post-card__accent-sm"></div>
-                        <div class="content">
-                            <% if post.has_thumb? %>
-                                <div class="post-image" style="background-image: url('<%= raw post.get_meta("thumb") %>');
-  background-color: white;
-  background-size: cover;
-  background-position: center center;">
-                                </div>
-                            <% end %>
-                            <div class="post-category">
-                                <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
-                            </div>
-                            <div class="post-title">
-                                <%= post.the_title %>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <% if index == 0 %>
+                    <%= render partial: "partials/large_post_card", locals: { post: post } %>
+                <% elsif index == 1 || index == 2 %>
+                    <%= render partial: "partials/small_post_card", locals: { post: post } %>
+                <% end %>
             <% end %>
             <div class="col-sm-12 top-card-padder">
                 <div class="banner-wrapper small-banner-wrapper">
@@ -117,8 +59,8 @@
                         </header>
                     </div>
                     <hr>
-                    <div class="content">
-                        <% posts.each_with_index do |post, index| %>
+                    <div class="content post-list-content">
+                        <% posts.first(10).each_with_index do |post, index| %>
                             <%= render partial: "partials/post_list_row", locals: { post: post } %>
                         <% end %>
                     </div>

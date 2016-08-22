@@ -1,11 +1,16 @@
 <article class="post-list-row">
-    <div class="post-list-image" style="background-image: url('<%= raw post.get_meta("thumb") %>');"></div>
+    <a href="<%= post.the_url %>"
+       class="post-list-image"
+       style="background-image: url('<%= raw post.get_meta("thumb") %>');"></a>
     <div class="post-list-text">
         <div class="post-category">
             <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
         </div>
         <div class="post-title">
-            <%= post.the_title %> Test Test Test Test Test
+            <a href="<%= post.the_url %>">
+                <%= post.the_title %>
+            </a>
         </div>
     </div>
 </article>
+<hr>
