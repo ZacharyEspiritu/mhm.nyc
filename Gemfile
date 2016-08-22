@@ -18,9 +18,6 @@ gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-se
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
 
-gem 'annotate'
-gem 'faker'
-
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

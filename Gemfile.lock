@@ -49,9 +49,6 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     addressable (2.4.0)
-    annotate (2.7.1)
-      activerecord (>= 3.2, < 6.0)
-      rake (>= 10.4, < 12.0)
     arel (7.1.1)
     autoprefixer-rails (6.4.0.1)
       execjs
@@ -124,8 +121,6 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
-    faker (1.6.6)
-      i18n (~> 0.5)
     ffi (1.9.14)
     font-awesome-rails (4.6.3.1)
       railties (>= 3.2, < 5.1)
@@ -285,7 +280,6 @@ PLATFORMS
 
 DEPENDENCIES
   activemodel-serializers-xml!
-  annotate
   autoprefixer-rails
   better_errors
   binding_of_caller
@@ -297,7 +291,6 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner
   factory_girl_rails
-  faker
   fuubar
   jbuilder (~> 2.5)
   jquery-rails
