@@ -151,6 +151,11 @@ body {
     margin-right: 10px;
   }
 
+  hr {
+    margin: 0;
+    padding: 0;
+  }
+
   .post-card__accent-sm,
   .post-card__accent-lg {
     background: $black;
@@ -238,6 +243,29 @@ body {
 }
 
 .top-card-padder { padding-top: 20px !important; }
+
+/* POST LIST STYLES */
+
+.post-list-row {
+  display: table;
+  max-height: 68px;
+
+  .post-list-image {
+    display: table-cell;
+    width: 68px;
+    max-height: 68px;
+    background: red;
+  }
+
+  .post-list-text {
+    display: table-cell;
+    padding-left: 7px;
+    max-height: 66px;
+    vertical-align: middle;
+
+    .post-title { font-size: 18px; }
+  }
+}
 
 /* FOOTER STYLES */
 

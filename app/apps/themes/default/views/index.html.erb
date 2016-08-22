@@ -1,3 +1,4 @@
+<% posts = (current_site.the_post_type("post").the_posts.decorate rescue {}) %>
 <div class="container">
     <div class="banner-wrapper">
         <figure class="banner">
@@ -21,7 +22,7 @@
     </div>
     <div class="row post-previews">
         <div class="col-sm-8">
-            <% (current_site.the_post_type("post").the_posts.decorate rescue {}).each_with_index do |post, index| %>
+            <% posts.each_with_index do |post, index| %>
                 <div class="col-sm-12">
                     <div class="post-card">
                         <div class="post-card__accent-lg"></div>
@@ -115,26 +116,10 @@
                             Latest Posts
                         </header>
                     </div>
-                    <hr style="margin: 0; padding: 0;">
+                    <hr>
                     <div class="content">
-                        <% (current_site.the_post_type("post").the_posts.decorate rescue {}).each_with_index do |post, index| %>
-                            <article style="display: table; height: 68px;">
-                                <div style="width: 68px; height: 68px; background: red; display: table-cell; background-image: url('<%= raw post.get_meta("thumb") %>');">
-                                </div>
-                                <div style="display: table-cell; padding-left: 7px; height: 66px; vertical-align: middle;">
-                                    <div class="post-category">
-                                        <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
-                                    </div>
-                                    <div class="post-title" style="font-size: 18px;">
-                                        <%= post.the_title %> Test Test Test Test Test
-                                    </div>
-                                </div>
-                                <% if post.has_thumb? %>
-                                <div class="post-image">
-
-                                </div>
-                            <% end %>
-                            </article>
+                        <% posts.each_with_index do |post, index| %>
+                            <%= render partial: "partials/post_list_row", locals: { post: post } %>
                         <% end %>
                     </div>
                 </div>
