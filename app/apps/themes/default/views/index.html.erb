@@ -26,7 +26,10 @@
                     <div class="post-card">
                         <div class="post-card__accent-lg"></div>
                         <div class="content large-content">
-                            <div class="post-image-large" style="background-image: url('<%= raw post.get_meta("thumb") %>');">
+                            <div class="post-image-large" style="background-image: url('<%= raw post.get_meta("thumb") %>');
+  background-color: white;
+  background-size: cover;
+  background-position: center center;">
                             </div>
                             <div class="post-text-large">
                                 <div class="post-category">
@@ -47,7 +50,10 @@
                         <div class="post-card__accent-sm"></div>
                         <div class="content">
                             <% if post.has_thumb? %>
-                                <div class="post-image" style="background-image: url('<%= raw post.get_meta("thumb") %>');">
+                                <div class="post-image" style="background-image: url('<%= raw post.get_meta("thumb") %>');
+  background-color: white;
+  background-size: cover;
+  background-position: center center;">
                                 </div>
                             <% end %>
                             <div class="post-category">
@@ -64,7 +70,10 @@
                         <div class="post-card__accent-sm"></div>
                         <div class="content">
                             <% if post.has_thumb? %>
-                                <div class="post-image" style="background-image: url('<%= raw post.get_meta("thumb") %>');">
+                                <div class="post-image" style="background-image: url('<%= raw post.get_meta("thumb") %>');
+  background-color: white;
+  background-size: cover;
+  background-position: center center;">
                                 </div>
                             <% end %>
                             <div class="post-category">
