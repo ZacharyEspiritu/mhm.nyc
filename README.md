@@ -1,6 +1,8 @@
 # Mental Health Matters ![alt text](https://img.shields.io/badge/build-passing-brightgreen.svg "Build Status")
 
-Mental Health Matters is a blog dedicated to raising awareness of mental health issues in New York City.
+Mental Health Matters is a blog dedicated to raising awareness of mental health issues in New York City. In late August, two of my friends began the blog and asked me to design their website. 
+
+You can find the website at [mhm.nyc](http://www.mhm.nyc).
 
 It's built on the [Chameleon CMS](https://github.com/owen2345/camaleon-cms) for Ruby on Rails.
 
