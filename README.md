@@ -6,6 +6,8 @@ You can find the website at [mhm.nyc](http://www.mhm.nyc).
 
 It's built on the [Chameleon CMS](https://github.com/owen2345/camaleon-cms) for Ruby on Rails.
 
+<img src="https://github.com/ZacharyEspiritu/mental-health-matters/blob/master/app/apps/themes/default/assets/images/image.png?raw=true">
+
 ## Installation
 
 ```
