@@ -1,0 +1,16 @@
+<div class="post-card latest-posts">
+    <div class="post-card__accent-sm"></div>
+    <div>
+        <div class="content">
+            <header class="post-title">
+                Latest Posts
+            </header>
+        </div>
+        <hr>
+        <div class="content post-list-content">
+            <% posts.first(10).each_with_index do |post, index| %>
+                <%= render partial: "partials/post_list_row", locals: { post: post } %>
+            <% end %>
+        </div>
+    </div>
+</div>

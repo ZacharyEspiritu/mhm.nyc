@@ -1,7 +1,7 @@
 <% posts = (current_site.the_post_type("post").the_posts.decorate rescue {}) %>
 <div class="container">
-    <div class="banner-wrapper">
-        <figure class="banner">
+    <figure class="banner-wrapper">
+        <div class="banner">
             <div class="blue-overlay">
                 <figcaption>
                     <header>
@@ -18,10 +18,10 @@
                     </div>
                 </a>
             </div>
-        </figure>
-    </div>
+        </div>
+    </figure>
     <div class="row post-previews">
-        <div class="col-sm-8">
+        <main class="col-sm-8">
             <% posts.each_with_index do |post, index| %>
                 <% if index == 0 %>
                     <%= render partial: "partials/large_post_card", locals: { post: post } %>
@@ -30,8 +30,8 @@
                 <% end %>
             <% end %>
             <div class="col-sm-12 top-card-padder">
-                <div class="banner-wrapper small-banner-wrapper">
-                    <figure class="banner small-banner">
+                <figure class="banner-wrapper small-banner-wrapper">
+                    <div class="banner small-banner">
                         <div class="blue-overlay">
                             <figcaption>
                                 <header>
@@ -45,63 +45,12 @@
                                 </div>
                             </a>
                         </div>
-                    </figure>
-                </div>
+                    </div>
+                </figure>
             </div>
-        </div>
+        </main>
         <aside class="col-sm-4">
-            <div class="post-card latest-posts">
-                <div class="post-card__accent-sm"></div>
-                <div>
-                    <div class="content">
-                        <header class="post-title">
-                            Latest Posts
-                        </header>
-                    </div>
-                    <hr>
-                    <div class="content post-list-content">
-                        <% posts.first(10).each_with_index do |post, index| %>
-                            <%= render partial: "partials/post_list_row", locals: { post: post } %>
-                        <% end %>
-                    </div>
-                </div>
-            </div>
+            <%= render partial: "partials/latest_posts", locals: { posts: posts } %>
         </aside>
     </div>
 </div>
-
-<% (current_site.the_post_type("post").the_posts.decorate rescue {}).each_with_index do |post, index| %>
-    <!-- <article class="post-<%= index %> post type-post status-publish format-standard category-sin-categoria" id="post-<%= index %>">
-        <header class="entry-header">
-            <div class="entry-thumbnail">
-                <%= raw post.the_link_thumb() if post.has_thumb?%>
-            </div>
-            <h1 class="entry-title">
-                <a rel="bookmark" href="<%= post.the_url %>"><%= post.the_title %></a>
-            </h1>
-            <div class="entry-meta">
-                <span class="date">
-                    <a rel="bookmark" title="Enlace permanente a <%= post.the_title %>" href="<%= post.the_url %>">
-                        <time datetime="" class="entry-date"><%= post.the_created_at %></time>
-                    </a>
-                </span>
-                <span class="categories-links">
-                    <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
-                </span>
-                <span class="tags-links">
-                    <%= raw get_taxonomy(post.the_tags.decorate, 'tag') %>
-                </span>
-            </div>
-        </header>
-        <div class="entry-content">
-            <%= raw post.the_content %>
-        </div>
-        <% if post.the_comments.count > 0 %>
-            <footer class="entry-meta">
-                <div class="comments-link">
-                    <a href="<%= post.the_url %>">Ver los comentarios</a>
-                </div>
-            </footer>
-        <% end %>
-    </article> -->
-<% end %>

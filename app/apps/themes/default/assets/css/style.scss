@@ -212,6 +212,7 @@ body {
     }
 
     .post-category {
+      font-family: "Helvetica Neue", HelveticaNeue, Helvetica, serif;
       font-weight: bold;
 
       a {
@@ -229,6 +230,11 @@ body {
     .post-preview {
       margin-top: 4px;
       color: $light-gray;
+      height: 200px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+      p { line-height: 25px; }
     }
 
     .post-title {
