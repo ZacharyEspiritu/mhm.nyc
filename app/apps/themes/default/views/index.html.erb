@@ -19,58 +19,101 @@
             </div>
         </figure>
     </div>
-    <div class="row post-previews">
-        <div class="col-sm-8">
-            <div class="col-sm-12">
-                <div style="background: #FFFFFF; box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50); margin-right: 10px;">
-                    <div style="background: #000000; height: 9px;"></div>
-                    sdfadsfsdf
-                </div>
-            </div>
-            <div class="col-sm-6" style="padding: 20px 0 0 0;">
-                <div style="background: #FFFFFF; box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50); margin-right: 15px;">
-                    <div style="background: #000000; height: 5px;"></div>
-                    sdfadsfsdf
-                </div>
-            </div>
-            <div class="col-sm-6" style="padding: 20px 0 0 0;">
-                <div style="background: #FFFFFF; box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50); margin-left: 5px; margin-right: 10px;">
-                    <div style="background: #000000; height: 5px;"></div>
-                    sdfadsfsdf
-                </div>
-            </div>
-            <div class="col-sm-12" style="padding-top: 20px;">
-                <div class="banner-wrapper" style="margin-right: 10px;">
-                    <figure class="banner small-banner">
-                        <div class="blue-overlay">
-                            <figcaption>
-                                <header>
-                                    Learn how you can help.
-                                </header>
-                            </figcaption>
-                            <a href="" class="button">
-                                learn more
-                                <div class="arrow">
-                                    <%= image_tag "arrow.svg" %>
+    <% (current_site.the_post_type("post").the_posts.decorate rescue {}).each_with_index do |post, index| %>
+        <div class="row post-previews">
+            <div class="col-sm-8">
+                <div class="col-sm-12">
+                    <div class="post-card">
+                        <div class="post-card__accent-lg"></div>
+                        <div class="content large-content">
+                            <div class="post-image-large">
+                            </div>
+                            <div class="post-text-large">
+                                <div class="post-category">
+                                    <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
                                 </div>
-                            </a>
+                                <div class="post-title">
+                                    <%= post.the_title %>
+                                </div>
+                                <div class="post-preview">
+                                    This is a brief teaser of the post. It will automatically be populated with the first paragraph of the post when the post is created. If the paragraph is longer than is available, it will be truncated using an elipses here…
+                                </div>
+                            </div>
                         </div>
-                    </figure>
+                    </div>
+                </div>
+                <div class="col-sm-6 top-card-padder">
+                    <div class="post-card left-post-card">
+                        <div class="post-card__accent-sm"></div>
+                        <div class="content">
+                            <% if post.has_thumb? %>
+                                <div class="post-image">
+                                    <%= raw post.the_link_thumb() %>
+                                </div>
+                            <% end %>
+                            <div class="post-category">
+                                <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
+                            </div>
+                            <div class="post-title">
+                                <%= post.the_title %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 top-card-padder">
+                    <div class="post-card right-post-card">
+                        <div class="post-card__accent-sm"></div>
+                        <div class="content">
+                            <% if post.has_thumb? %>
+                                <div class="post-image">
+                                    <%= raw post.the_link_thumb() %>
+                                </div>
+                            <% end %>
+                            <div class="post-category">
+                                <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
+                            </div>
+                            <div class="post-title">
+                                <%= post.the_title %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12 top-card-padder">
+                    <div class="banner-wrapper small-banner-wrapper">
+                        <figure class="banner small-banner">
+                            <div class="blue-overlay">
+                                <figcaption>
+                                    <header>
+                                        Learn how you can help.
+                                    </header>
+                                </figcaption>
+                                <a href="" class="button">
+                                    learn more
+                                    <div class="arrow">
+                                        <%= image_tag "arrow.svg" %>
+                                    </div>
+                                </a>
+                            </div>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="post-card latest-posts">
+                    <div class="post-card__accent-sm"></div>
+                    <div class="content">
+                        <div class="post-title">
+                            Latest Posts
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-4">
-            <div style="background: #FFFFFF; box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50); margin-left: 10px;">
-                <div style="background: #000000; height: 5px;"></div>
-                sdfadsfsdf
-            </div>
-        </div>
-    </div>
+    <% end %>
 </div>
 
-<!--
 <% (current_site.the_post_type("post").the_posts.decorate rescue {}).each_with_index do |post, index| %>
-    <article class="post-<%= index %> post type-post status-publish format-standard category-sin-categoria" id="post-<%= index %>">
+    <!-- <article class="post-<%= index %> post type-post status-publish format-standard category-sin-categoria" id="post-<%= index %>">
         <header class="entry-header">
             <div class="entry-thumbnail">
                 <%= raw post.the_link_thumb() if post.has_thumb?%>
@@ -102,6 +145,5 @@
                 </div>
             </footer>
         <% end %>
-    </article>
+    </article> -->
 <% end %>
--->
