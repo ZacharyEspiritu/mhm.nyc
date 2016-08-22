@@ -1,15 +1,28 @@
-<article id="post" >
+<article class="post type-post status-publish format-standard category-sin-categoria">
     <header class="entry-header">
-        <% if @post.has_thumb? %>
-            <div class="entry-thumbnail">
-                <%= raw @post.the_thumb %>
-            </div>
-        <% end %>
-        <h1 class="entry-title"><%= @post.the_title %></h1>
+        <div class="entry-thumbnail">
+            <%= raw @post.the_link_thumb() if @post.has_thumb?%>
+        </div>
+        <h1 class="entry-title">
+            <a rel="bookmark" href="<%= @post.the_url %>"><%= @post.the_title %></a>
+        </h1>
+        <div class="entry-meta">
+            <span class="date">
+                <a rel="bookmark" title="Enlace permanente a <%= @post.the_title %>" href="<%= @post.the_url %>">
+                    <time datetime="" class="entry-date"><%= @post.the_created_at %></time>
+                </a>
+            </span>
+            <span class="categories-links">
+                <%= raw get_taxonomy(@post.the_categories.decorate, 'category tag') %>
+            </span>
+            <span class="tags-links">
+                <%= raw get_taxonomy(@post.the_tags.decorate, 'tag') %>
+            </span>
+        </div><!-- .entry-meta -->
     </header><!-- .entry-header -->
     <div class="entry-content">
         <%= raw @post.the_content %>
-    </div><!-- .entry-content -->
+    </div>
     <footer class="entry-meta">
         <!-- custom fields -->
         <% if @post.render_fields.present? %>
@@ -18,5 +31,5 @@
             <%= raw @post.render_fields %>
         <% end %>
     </footer><!-- .entry-meta -->
-</article><!-- #post -->
+</article>
 <%= render partial: 'partials/comments', locals: {post: @post} if @post.can_commented? %>

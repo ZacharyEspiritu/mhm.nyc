@@ -4,29 +4,88 @@
 @import "mixins";
 @import "bootstrap-text-align";
 @import "chameleon-default";
-
-$dark-blue: #122076;
-
-$white: #ffffff;
-
-$beige: #eae5ad;
-
-$lighter-gray: #F8F8F8;
-$light-gray: #7b7b7b;
-$gray: #2f2f2f;
-$dark-gray: #555555;
-$darker-gray: #171717;
-
-$colophon-height: 48px;
+@import "constants";
 
 body {
   -webkit-overflow-scrolling: touch;
   -webkit-font-smoothing: antialiased;
   background-color: $lighter-gray;
   color: $dark-gray;
-  font-family: 'Century', serif;
+  font-family: "Century", serif;
   font-size: 14px;
   font-weight: 400;
+}
+
+.banner-wrapper {
+  box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+  /*height: 297px;*/
+  max-width: 887px;
+  margin: 0 auto;
+}
+
+.banner {
+  position: relative;
+  height: 297px;
+  max-width: 887px;
+  background-image: image-url('skyline.png');
+  background-color: white;
+  background-size: cover;
+  background-position: center center;
+
+  .blue-overlay {
+    height: 219px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-image: linear-gradient(0deg, rgba(255,255,255,0.00) 0%, rgba(18, 31, 120, 0.46) 90%, rgba(18, 31, 120, 0.46) 100%);
+    padding: 10px 22px;
+  }
+
+  header {
+    font-family: Century;
+    font-size: 50px;
+    color: #FFFFFF;
+    letter-spacing: -0.97px;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+  }
+
+  footer {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-family: Century;
+    font-size: 30px;
+    color: #FFFFFF;
+    letter-spacing: -0.58px;
+    text-shadow: 0px 2px 4px rgba(0,0,0,0.50);
+  }
+
+  .button {
+    display: block;
+    height: 33px;
+    width: 163px;
+    font-family: "Helvetica Neue", HelveticaNeue, Helvetica, serif;
+    opacity: 0.94;
+    background: #122076;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50);
+    color: #FFFFFF;
+    letter-spacing: -0.39px;
+    font-size: 20px;
+    padding: 1.5px 12px;
+
+    .arrow {
+      float: right;
+    }
+  }
+}
+
+.small-banner {
+  height: 190px;
+
+  header {
+    font-size: 45px;
+    margin-bottom: 6px;
+  }
 }
 
 .navbar {
@@ -58,6 +117,19 @@ body {
   a {
     color: $beige;
     font-size: 36px;
+  }
+}
+
+.post-previews {
+  max-width: 887px;
+  margin: 20px auto;
+
+  .col-sm-4,
+  .col-sm-6,
+  .col-sm-8,
+  .col-sm-12 {
+    margin: 0;
+    padding: 0;
   }
 }
 

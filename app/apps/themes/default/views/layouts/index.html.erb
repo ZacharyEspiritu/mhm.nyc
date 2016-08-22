@@ -27,16 +27,16 @@
                                 <%= link_to "home", "/" %>
                             </div>
                             <div class="navbar-link__left">
-                                <%= link_to "about", "#" %>
+                                <%= link_to "about", "/about" %>
                             </div>
                             <%= link_to "/", class: "navbar-link__center" do %>
                                 <%= image_tag "logo.png" %>
                             <% end %>
                             <div class="navbar-link__right">
-                                <%= link_to "learn", "#" %>
+                                <%= link_to "learn", "/learn" %>
                             </div>
                             <div class="navbar-link__right">
-                                <%= link_to "help", "#" %>
+                                <%= link_to "help", "/help" %>
                             </div>
                         </div>
                     </div>
@@ -47,15 +47,9 @@
 
         <div id="wrapper" class="clearfix">
             <div class="home-wrap clearfix">
-                <% if is_home? %>
+                <div class="hentry">
                     <%= yield %>
-                <% else %>
-                    <div id="ww">
-                        <div class="container">
-                            <%= yield %>
-                        </div>
-                    </div>
-                <% end %>
+                </div>
             </div>
         </div>
 

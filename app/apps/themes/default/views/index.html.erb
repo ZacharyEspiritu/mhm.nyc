@@ -1,5 +1,76 @@
+<div class="container">
+    <div class="banner-wrapper">
+        <figure class="banner">
+            <div class="blue-overlay">
+                <figcaption>
+                    <header>
+                        You can make a difference.
+                    </header>
+                    <footer>
+                        Find out how you can help.
+                    </footer>
+                </figcaption>
+                <a href="" class="button">
+                    learn more
+                    <div class="arrow">
+                        <%= image_tag "arrow.svg" %>
+                    </div>
+                </a>
+            </div>
+        </figure>
+    </div>
+    <div class="row post-previews">
+        <div class="col-sm-8">
+            <div class="col-sm-12">
+                <div style="background: #FFFFFF; box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50); margin-right: 10px;">
+                    <div style="background: #000000; height: 9px;"></div>
+                    sdfadsfsdf
+                </div>
+            </div>
+            <div class="col-sm-6" style="padding: 20px 0 0 0;">
+                <div style="background: #FFFFFF; box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50); margin-right: 15px;">
+                    <div style="background: #000000; height: 5px;"></div>
+                    sdfadsfsdf
+                </div>
+            </div>
+            <div class="col-sm-6" style="padding: 20px 0 0 0;">
+                <div style="background: #FFFFFF; box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50); margin-left: 5px; margin-right: 10px;">
+                    <div style="background: #000000; height: 5px;"></div>
+                    sdfadsfsdf
+                </div>
+            </div>
+            <div class="col-sm-12" style="padding-top: 20px;">
+                <div class="banner-wrapper" style="margin-right: 10px;">
+                    <figure class="banner small-banner">
+                        <div class="blue-overlay">
+                            <figcaption>
+                                <header>
+                                    Learn how you can help.
+                                </header>
+                            </figcaption>
+                            <a href="" class="button">
+                                learn more
+                                <div class="arrow">
+                                    <%= image_tag "arrow.svg" %>
+                                </div>
+                            </a>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div style="background: #FFFFFF; box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.50); margin-left: 10px;">
+                <div style="background: #000000; height: 5px;"></div>
+                sdfadsfsdf
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
 <% (current_site.the_post_type("post").the_posts.decorate rescue {}).each_with_index do |post, index| %>
-    <article class="post-<%= index %> post type-post status-publish format-standard hentry category-sin-categoria" id="post-<%= index %>">
+    <article class="post-<%= index %> post type-post status-publish format-standard category-sin-categoria" id="post-<%= index %>">
         <header class="entry-header">
             <div class="entry-thumbnail">
                 <%= raw post.the_link_thumb() if post.has_thumb?%>
@@ -19,17 +90,18 @@
                 <span class="tags-links">
                     <%= raw get_taxonomy(post.the_tags.decorate, 'tag') %>
                 </span>
-            </div><!-- .entry-meta -->
-        </header><!-- .entry-header -->
+            </div>
+        </header>
         <div class="entry-content">
             <%= raw post.the_content %>
-        </div><!-- .entry-content -->
+        </div>
         <% if post.the_comments.count > 0 %>
             <footer class="entry-meta">
                 <div class="comments-link">
                     <a href="<%= post.the_url %>">Ver los comentarios</a>
-                </div><!-- .comments-link -->
-            </footer><!-- .entry-meta -->
+                </div>
+            </footer>
         <% end %>
     </article>
 <% end %>
+-->
