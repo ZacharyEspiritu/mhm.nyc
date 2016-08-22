@@ -163,12 +163,13 @@ body {
     display: table;
 
     .post-image-large {
-      width: 280px;
+      width: 50%;
       height: 230px;
       display: table-cell;
     }
 
     .post-text-large {
+      width: 50%;
       display: table-cell;
       padding-left: 10px;
     }

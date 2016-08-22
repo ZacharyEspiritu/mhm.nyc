@@ -19,14 +19,14 @@
             </div>
         </figure>
     </div>
-    <% (current_site.the_post_type("post").the_posts.decorate rescue {}).each_with_index do |post, index| %>
-        <div class="row post-previews">
-            <div class="col-sm-8">
+    <div class="row post-previews">
+        <div class="col-sm-8">
+            <% (current_site.the_post_type("post").the_posts.decorate rescue {}).each_with_index do |post, index| %>
                 <div class="col-sm-12">
                     <div class="post-card">
                         <div class="post-card__accent-lg"></div>
                         <div class="content large-content">
-                            <div class="post-image-large">
+                            <div class="post-image-large" style="background-image: url('<%= raw post.get_meta("thumb") %>');">
                             </div>
                             <div class="post-text-large">
                                 <div class="post-category">
@@ -47,8 +47,7 @@
                         <div class="post-card__accent-sm"></div>
                         <div class="content">
                             <% if post.has_thumb? %>
-                                <div class="post-image">
-                                    <%= raw post.the_link_thumb() %>
+                                <div class="post-image" style="background-image: url('<%= raw post.get_meta("thumb") %>');">
                                 </div>
                             <% end %>
                             <div class="post-category">
@@ -65,8 +64,7 @@
                         <div class="post-card__accent-sm"></div>
                         <div class="content">
                             <% if post.has_thumb? %>
-                                <div class="post-image">
-                                    <%= raw post.the_link_thumb() %>
+                                <div class="post-image" style="background-image: url('<%= raw post.get_meta("thumb") %>');">
                                 </div>
                             <% end %>
                             <div class="post-category">
@@ -78,38 +76,62 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-12 top-card-padder">
-                    <div class="banner-wrapper small-banner-wrapper">
-                        <figure class="banner small-banner">
-                            <div class="blue-overlay">
-                                <figcaption>
-                                    <header>
-                                        Learn how you can help.
-                                    </header>
-                                </figcaption>
-                                <a href="" class="button">
-                                    learn more
-                                    <div class="arrow">
-                                        <%= image_tag "arrow.svg" %>
-                                    </div>
-                                </a>
-                            </div>
-                        </figure>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-4">
-                <div class="post-card latest-posts">
-                    <div class="post-card__accent-sm"></div>
-                    <div class="content">
-                        <div class="post-title">
-                            Latest Posts
+            <% end %>
+            <div class="col-sm-12 top-card-padder">
+                <div class="banner-wrapper small-banner-wrapper">
+                    <figure class="banner small-banner">
+                        <div class="blue-overlay">
+                            <figcaption>
+                                <header>
+                                    Learn how you can help.
+                                </header>
+                            </figcaption>
+                            <a href="" class="button">
+                                learn more
+                                <div class="arrow">
+                                    <%= image_tag "arrow.svg" %>
+                                </div>
+                            </a>
                         </div>
-                    </div>
+                    </figure>
                 </div>
             </div>
         </div>
-    <% end %>
+        <aside class="col-sm-4">
+            <div class="post-card latest-posts">
+                <div class="post-card__accent-sm"></div>
+                <div>
+                    <div class="content">
+                        <header class="post-title">
+                            Latest Posts
+                        </header>
+                    </div>
+                    <hr style="margin: 0; padding: 0;">
+                    <div class="content">
+                        <% (current_site.the_post_type("post").the_posts.decorate rescue {}).each_with_index do |post, index| %>
+                            <article style="display: table; height: 68px;">
+                                <div style="width: 68px; height: 68px; background: red; display: table-cell; background-image: url('<%= raw post.get_meta("thumb") %>');">
+                                </div>
+                                <div style="display: table-cell; padding-left: 7px; height: 66px; vertical-align: middle;">
+                                    <div class="post-category">
+                                        <%= raw get_taxonomy(post.the_categories.decorate, 'category tag') %>
+                                    </div>
+                                    <div class="post-title" style="font-size: 18px;">
+                                        <%= post.the_title %> Test Test Test Test Test
+                                    </div>
+                                </div>
+                                <% if post.has_thumb? %>
+                                <div class="post-image">
+
+                                </div>
+                            <% end %>
+                            </article>
+                        <% end %>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
 </div>
 
 <% (current_site.the_post_type("post").the_posts.decorate rescue {}).each_with_index do |post, index| %>
