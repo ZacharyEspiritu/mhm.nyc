@@ -11,7 +11,7 @@ It's built on the [Chameleon CMS](https://github.com/owen2345/camaleon-cms) for 
 ## Installation
 
 ```
-git clone https://github.com/ZacharyEspiritu/mental-health-matters.git
+git clone https://github.com/ZacharyEspiritu/mhm.nyc.git
 cd mental-health-matters
 bundle install
 rake db:migrate
